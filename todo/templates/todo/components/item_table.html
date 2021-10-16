@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <td>{{ object.id }}</td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td>{{ object.title }}</td>
+  </tr>
+  <tr>
+    <th>本文</th>
+    <td>{{ object.body|default:"" }}</td>
+  </tr>
+  <tr>
+    <th>予定日時</th>
+    <td>{{ object.scheduled_at|date:"SHORT_DATETIME_FORMAT"|default:"" }}</td>
+  </tr>
+  <tr>
+    <th>作成日時</th>
+    <td>{{ object.created_at|date:"SHORT_DATETIME_FORMAT" }}</td>
+  </tr>
+  <tr>
+    <th>更新日時</th>
+    <td>{{ object.updated_at|date:"SHORT_DATETIME_FORMAT" }}</td>
+  </tr>
+</table>

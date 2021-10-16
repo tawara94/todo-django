@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo
+      MYSQL_USER: django
+      MYSQL_PASSWORD: django
+      TZ: Asia/Tokyo
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - ./logs:/var/log
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      TZ: Asia/Tokyo

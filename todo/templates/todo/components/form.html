@@ -1,0 +1,14 @@
+<form method="post">
+  {% csrf_token %}
+  <p>
+    タイトル：{{ form.title }}
+  </p>
+  <p>
+    本文：{{ form.body }}
+  </p>
+  <p>
+    予定日時：{{ form.scheduled_at }}
+  </p>
+  <input type="submit" value="登録">
+</form>
+<a href="{% url 'todo:list' %}">戻る</a>

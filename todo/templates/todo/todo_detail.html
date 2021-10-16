@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}詳細画面{% endblock %}
+
+{% block content %}
+{% include 'todo/components/item_table.html' %}
+<a href="{% url 'todo:update' pk=object.id %}">編集</a>
+<a href="{% url 'todo:delete' pk=object.id %}">削除</a>
+<a href="{% url 'todo:list' %}">戻る</a>
+{% endblock %}

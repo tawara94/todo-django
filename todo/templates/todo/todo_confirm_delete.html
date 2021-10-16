@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}削除画面{% endblock %}
+
+{% block content %}
+{% include 'todo/components/item_table.html' %}
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" value="削除" />
+</form>
+<a href="{% url 'todo:list' %}">戻る</a>
+{% endblock %}
