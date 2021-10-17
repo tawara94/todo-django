@@ -63,13 +63,13 @@ python3 manage.py startapp [APP_NAME]
 ##### ファイル作成
 
 ```bash
-python3 manage.py [APP_NAME] makemigrations
+python3 manage.py makemigrations [APP_NAME]
 ```
 
 ##### 実行
 
 ```bash
-python3 manage.py [APP_NAME] migrate
+python3 manage.py migrate [APP_NAME]
 ```
 
 ##### 確認
